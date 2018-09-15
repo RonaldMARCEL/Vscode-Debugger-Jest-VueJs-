@@ -1,0 +1,49 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "name": "Jest all files",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/.bin/jest",
+            "args": [
+              "--env=node",
+              // Save alias @ for module.
+              "--config=${workspaceFolder}/jest.conf.debug.js",
+              "-i",
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+          },
+          {
+            "type": "node",
+            "name": "Jest current file",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/.bin/jest",
+            "args": [
+              "--env=node",
+              // Save alias @ for module.
+              "--config=${workspaceFolder}/jest.conf.debug.js",
+              "-i",
+              // Target the current file.
+              "${relativeFile}"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+          },
+          {
+            "type": "chrome",
+            "request": "launch",
+            "name": "vuejs: chrome",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}/src",
+            "breakOnLoad": true,
+            "sourceMapPathOverrides": {
+              "webpack:///src/*": "${webRoot}/*"
+            }
+          }
+    ]
+}
