@@ -12,7 +12,7 @@
             "args": [
               "--env=node",
               // Save alias @ for module.
-              "--config=${workspaceFolder}/jest.conf.debug.js",
+              "--config=${workspaceFolder}/test/unit/jest.conf.debug.js",
               "-i",
             ],
             "console": "integratedTerminal",
